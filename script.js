@@ -49,6 +49,49 @@ document.addEventListener('DOMContentLoaded', function () {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    // Skill Modal Logic
+    const skillModal = document.getElementById('skillModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Descrições das habilidades
+    const skillDescriptions = {
+        "HTML5": "Linguagem de marcação utilizada para estruturar e apresentar conteúdo na World Wide Web.",
+        "CSS3": "Linguagem de folhas de estilo utilizada para definir a apresentação de documentos escritos em HTML.",
+        "JavaScript": "Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma.",
+        "AngularJS": "Framework JavaScript open-source, mantido pelo Google, que auxilia na execução de single-page applications.",
+        "Thymeleaf": "Motor de template Java XML/XHTML/HTML5 moderno do lado do servidor para ambientes web e autônomos.",
+        "Java": "Linguagem de programação orientada a objetos desenvolvida na década de 90 pela Sun Microsystems.",
+        "Spring Boot": "Framework Java open source que facilita a criação de aplicações stand-alone de nível de produção.",
+        "SQL": "Linguagem de domínio específico utilizada em programação e projetada para gerenciar dados em sistemas de gerenciamento de banco de dados relacionais.",
+        "Dart": "Linguagem de script voltada à web desenvolvida pelo Google.",
+        "Aplicações Mobile": "Desenvolvimento de software para dispositivos móveis, como smartphones e assistentes digitais pessoais.",
+        "GitHub": "Plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git.",
+        "Método Scrum": "Framework para gestão e planejamento de projetos de software."
+    };
+
+    document.querySelectorAll('.skill-tag').forEach(tag => {
+        tag.addEventListener('click', () => {
+            const skillName = tag.innerText;
+            modalTitle.innerText = skillName;
+            modalDescription.innerText = skillDescriptions[skillName] || "Descrição detalhada sobre " + skillName + " em breve.";
+            skillModal.style.display = "block";
+        });
+    });
+
+    if (closeModal) {
+        closeModal.onclick = function () {
+            skillModal.style.display = "none";
+        }
+    }
+
+    window.onclick = function (event) {
+        if (event.target == skillModal) {
+            skillModal.style.display = "none";
+        }
+    }
 });
 
 // Função para abrir o certificado
@@ -108,6 +151,14 @@ function abrirCertificado() {
             modal.remove();
         }
     });
+}
+
+// Função para enviar email
+function enviarEmail() {
+    const email = "arthuracleite@gmail.com";
+    const subject = encodeURIComponent("Oportunidade de Estágio - Arthur Andrade");
+    const body = encodeURIComponent("Olá Arthur, encontrei seu currículo online e gostaria de conversar sobre oportunidades.");
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 }
 
 // Console welcome message

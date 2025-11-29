@@ -35,7 +35,6 @@
                 <p>Buscando oportunidade como Estagiário em Desenvolvimento de Sistemas</p>
                 <div class="hero-buttons">
                     <a href="#contato" class="btn btn-primary">Entrar em Contato</a>
-                    <a href="mailto:arthuracleite@gmail.com" class="btn btn-secondary">Enviar Email</a>
                 </div>
             </div>
         </div>
@@ -164,12 +163,12 @@
                     <span class="contato-link">Clique para ligar</span>
                 </a>
 
-                <a href="mailto:arthuracleite@gmail.com" class="contato-card">
+                <div onclick="enviarEmail()" class="contato-card" style="cursor: pointer;">
                     <i class="fas fa-envelope"></i>
                     <h3>Email</h3>
                     <p>arthuracleite@gmail.com</p>
                     <span class="contato-link">Enviar mensagem</span>
-                </a>
+                </div>
 
                 <a href="https://www.linkedin.com/in/arthur-andrade-692192352/" target="_blank" class="contato-card">
                     <i class="fab fa-linkedin"></i>
@@ -197,6 +196,14 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Modal para Descrições -->
+    <div id="skillModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
 </body>
 
 </html>
