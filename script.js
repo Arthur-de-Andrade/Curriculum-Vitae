@@ -156,9 +156,14 @@ function abrirCertificado() {
 // Função para enviar email
 function enviarEmail() {
     const email = "arthuracleite@gmail.com";
+    console.log("Tentando enviar email...");
     const subject = encodeURIComponent("Oportunidade de Estágio - Arthur Andrade");
     const body = encodeURIComponent("Olá Arthur, encontrei seu currículo online e gostaria de conversar sobre oportunidades.");
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+    // Tenta abrir em uma nova janela/aba (comportamento mais robusto para alguns navegadores)
+    window.open(mailtoLink, '_blank');
+    // Fallback para window.location se o popup for bloqueado (embora mailto geralmente não seja)
+    // window.location.href = mailtoLink;
 }
 
 // Console welcome message
