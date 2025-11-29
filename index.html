@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Andrade - Desenvolvedor Full Stack</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">Arthur Andrade</h1>
+                <ul class="nav-menu">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#educacao">Educação</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Arthur Andrade</h1>
+                <h2>Estudante de Sistemas de Informação & Desenvolvedor Full Stack</h2>
+                <p>Buscando oportunidade como Estagiário em Desenvolvimento de Sistemas</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn btn-primary">Entrar em Contato</a>
+                    <a href="mailto:arthuracleite@gmail.com" class="btn btn-secondary">Enviar Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="section-title">Objetivo</h2>
+            <div class="sobre-content">
+                <p>Atuar como <strong>Estagiário Universitário em Desenvolvimento de Sistemas</strong> para aprender
+                    mais da área de tecnologia e atingir bons resultados.</p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Barra Olímpica, Rio de Janeiro-RJ</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Disponibilidade: Manhã ou Tarde</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Modalidade: Remoto, Híbrido ou Presencial</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-language"></i>
+                        <span>Inglês: Básico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educação -->
+    <section id="educacao" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Educação</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Sistemas de Informação</h3>
+                        <span class="empresa">CEFET-RJ</span>
+                        <span class="periodo">Agosto 2025 - Atualidade</span>
+                        <p>Primeiro Período</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Ensino Médio Completo</h3>
+                        <span class="empresa">Colégio Nós</span>
+                        <span class="periodo">Fevereiro 2022 - Dezembro 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos -->
+    <section id="cursos" class="section">
+        <div class="container">
+            <h2 class="section-title">Cursos</h2>
+            <div class="curso-card">
+                <div class="curso-header">
+                    <h3>Programação Full Stack</h3>
+                    <span class="certificado-badge">Certificado</span>
+                </div>
+                <div class="curso-details">
+                    <span class="instituicao">Senac-Centro</span>
+                    <span class="carga-horaria">360 horas</span>
+                    <span class="periodo">26/03/2025 - 11/09/2025</span>
+                </div>
+                <!-- BOTÃO DO CERTIFICADO -->
+                <button class="btn-ver-certificado" onclick="abrirCertificado()">
+                    <i class="fas fa-file-pdf"></i> Ver Certificado
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Conhecimentos e Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">AngularJS</span>
+                        <span class="skill-tag">Thymeleaf</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Mobile & Outros</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">Aplicações Mobile</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Método Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <div class="contato-grid">
+                <a href="tel:+5521999030653" class="contato-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telefone</h3>
+                    <p>(21) 9 9903-0653</p>
+                    <span class="contato-link">Clique para ligar</span>
+                </a>
+
+                <a href="mailto:arthuracleite@gmail.com" class="contato-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>arthuracleite@gmail.com</p>
+                    <span class="contato-link">Enviar mensagem</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/arthur-andrade-692192352/" target="_blank" class="contato-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>/arthur-andrade</p>
+                    <span class="contato-link">Ver perfil</span>
+                </a>
+
+                <a href="https://github.com/Arthur-de-Andrade" target="_blank" class="contato-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Arthur-de-Andrade</p>
+                    <span class="contato-link">Ver repositórios</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Arthur Andrade. Todos os direitos reservados.</p>
+            <p>Disponível para oportunidades de estágio em desenvolvimento de sistemas</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
