@@ -493,3 +493,15 @@ body {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
+
+/* Estilo Global para Skills (Azul) */
+.skill-tag {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+.skill-tag:hover {
+    background: linear-gradient(135deg, #2980b9, #2c3e50);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}

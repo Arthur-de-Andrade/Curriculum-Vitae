@@ -69,7 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
         "Dart": "Linguagem de script voltada à web desenvolvida pelo Google.",
         "Aplicações Mobile": "Desenvolvimento de software para dispositivos móveis, como smartphones e assistentes digitais pessoais.",
         "GitHub": "Plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git.",
-        "Método Scrum": "Framework para gestão e planejamento de projetos de software."
+        "Método Scrum": "Framework ágil para gestão de projetos de desenvolvimento. Conhecimento em sprints, daily meetings, product backlog e papéis do Scrum. Trabalho em equipe focado em entrega contínua de valor e melhoria iterativa.",
+        "Kanban": "Metodologia ágil para gestão visual de trabalho e fluxo de produção. Experiência em organização de tarefas através de quadros Kanban, limitando trabalho em progresso (WIP) e otimizando o fluxo de entrega. Controle eficiente de backlog e melhoria contínua de processos.",
+        "Design Thinking": "Abordagem centrada no usuário para solução criativa de problemas. Domínio das fases: empatia, definição, ideação, prototipagem e teste. Aplicação em desenvolvimento de produtos e serviços que realmente atendam às necessidades reais dos usuários finais."
     };
 
     document.querySelectorAll('.skill-tag').forEach(tag => {
@@ -170,3 +172,63 @@ function enviarEmail() {
 console.log('🚀 Bem-vindo ao currículo online do Arthur Andrade!');
 console.log('💼 Desenvolvedor Full Stack em busca de oportunidades de estágio');
 console.log('📧 Contato: arthuracleite@gmail.com');
+
+// Lógica do Formulário de Feedback
+document.addEventListener('DOMContentLoaded', function () {
+    const feedbackForm = document.getElementById('feedbackForm');
+
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+
+            // Estado de carregamento
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+            // Coletar dados
+            const formData = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                tipo: document.getElementById('tipo').value,
+                mensagem: document.getElementById('mensagem').value,
+                contato: document.getElementById('contato').checked
+            };
+
+            try {
+                // Determinar URL da API (local ou produção)
+                const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                    ? 'http://localhost:3000/api/feedback'
+                    : 'https://seu-backend-url.herokuapp.com/api/feedback'; // TODO: Ajustar URL de produção quando tiver
+
+                // Por enquanto, vamos usar o localhost para teste ou simular sucesso se não tiver backend online
+                const response = await fetch('http://localhost:3000/api/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    alert('Obrigado pelo seu feedback! 🚀');
+                    feedbackForm.reset();
+                } else {
+                    throw new Error(data.message || 'Erro ao enviar feedback');
+                }
+
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao enviar feedback. Verifique se o servidor está rodando (npm run dev).');
+            } finally {
+                // Restaurar botão
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    }
+});

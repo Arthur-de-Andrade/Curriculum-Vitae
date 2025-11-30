@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+feedback-backend/node_modules/
+
+# Environment variables
+.env
+feedback-backend/.env
+
+# System files
+.DS_Store
