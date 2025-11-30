@@ -159,61 +159,7 @@
         </div>
     </section>
 
-    <!-- Feedback -->
-    <section id="feedback" class="section">
-        <div class="container">
-            <h2 class="section-title">Deixe seu Feedback</h2>
-            <div class="feedback-container" style="max-width: 600px; margin: 0 auto;">
-                <form id="feedbackForm" class="contact-form"
-                    style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="nome" style="display: block; margin-bottom: 0.5rem; color: var(--text);">Nome
-                            (Opcional)</label>
-                        <input type="text" id="nome" name="nome"
-                            style="width: 100%; padding: 0.8rem; border: 2px solid #eee; border-radius: 8px; transition: border-color 0.3s;">
-                    </div>
 
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--text);">Email
-                            (Opcional)</label>
-                        <input type="email" id="email" name="email"
-                            style="width: 100%; padding: 0.8rem; border: 2px solid #eee; border-radius: 8px; transition: border-color 0.3s;">
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="tipo" style="display: block; margin-bottom: 0.5rem; color: var(--text);">Tipo de
-                            Feedback *</label>
-                        <select id="tipo" name="tipo" required
-                            style="width: 100%; padding: 0.8rem; border: 2px solid #eee; border-radius: 8px; background: white;">
-                            <option value="sugestao">💡 Sugestão</option>
-                            <option value="critica">🎯 Crítica Construtiva</option>
-                            <option value="elogio">⭐ Elogio</option>
-                            <option value="duvida">❓ Dúvida</option>
-                            <option value="oportunidade">💼 Oportunidade</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="mensagem"
-                            style="display: block; margin-bottom: 0.5rem; color: var(--text);">Mensagem *</label>
-                        <textarea id="mensagem" name="mensagem" required rows="5"
-                            style="width: 100%; padding: 0.8rem; border: 2px solid #eee; border-radius: 8px; resize: vertical;"></textarea>
-                    </div>
-
-                    <div class="form-group"
-                        style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <input type="checkbox" id="contato" name="contato" style="width: auto;">
-                        <label for="contato" style="margin: 0; font-size: 0.9rem; color: var(--text-light);">Aceito ser
-                            contatado sobre este feedback</label>
-                    </div>
-
-                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
-                        Enviar Feedback <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <!-- Contato -->
     <section id="contato" class="section">
@@ -258,6 +204,12 @@
             <p>Disponível para oportunidades de estágio em desenvolvimento de sistemas</p>
         </div>
     </footer>
+
+    <!-- Floating Feedback Button -->
+    <div class="floating-feedback-btn" onclick="abrirGoogleForms()">
+        <i class="fas fa-comment-dots"></i>
+        <span class="btn-text">Feedback</span>
+    </div>
 
     <script src="script.js"></script>
     <!-- Modal para Descrições -->
