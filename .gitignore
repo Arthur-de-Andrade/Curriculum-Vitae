@@ -2,9 +2,16 @@
 node_modules/
 feedback-backend/node_modules/
 
+# Next.js / static export
+.next/
+out/
+
 # Environment variables
 .env
 feedback-backend/.env
 
 # System files
 .DS_Store
+.idea/
+npm-debug.log*
+*.tsbuildinfo

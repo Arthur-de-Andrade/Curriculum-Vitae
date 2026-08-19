@@ -1,0 +1,3 @@
+/* Tailwind utilities are available for future phases without enabling its preflight reset. */
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";

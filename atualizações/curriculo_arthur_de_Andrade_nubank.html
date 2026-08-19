@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículo - Arthur de Andrade de Cerqueira Leite</title>
+  <style>
+    :root {
+      --purple: #5d3d97;
+      --ink: #20232b;
+      --soft: #4d5563;
+      --muted: #697181;
+      --rule: #e3e5ea;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #f3f4f7;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    main.resume {
+      width: min(1120px, calc(100% - 40px));
+      margin: 32px auto;
+      background: var(--white);
+      padding: 54px 62px 64px;
+      box-shadow: 0 8px 34px rgba(26, 30, 42, .08);
+    }
+    header { margin-bottom: 31px; }
+    h1 {
+      margin: 0 0 9px;
+      font-size: 38px;
+      line-height: 1.12;
+      letter-spacing: -.02em;
+      color: #181b22;
+    }
+    .headline {
+      margin: 0 0 14px;
+      color: var(--purple);
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+    .contact-lines {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .contact-lines .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+      margin-bottom: 4px;
+    }
+    .contact-lines a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px dotted #9298a3;
+    }
+    .availability {
+      color: #30343c;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .top-rule {
+      height: 3px;
+      background: var(--purple);
+      margin-top: 25px;
+    }
+    section { margin: 0 0 31px; }
+    section:last-child { margin-bottom: 0; }
+    h2 {
+      margin: 0 0 17px;
+      color: var(--purple);
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+    }
+    .summary p,
+    .context,
+    .education p,
+    .course p {
+      margin: 0 0 13px;
+      color: #2e333c;
+    }
+    .summary p:last-child,
+    .education p:last-child,
+    .course p:last-child { margin-bottom: 0; }
+    .entry-head,
+    .edu-head,
+    .course-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 3px;
+    }
+    h3 {
+      margin: 0;
+      color: #1e2128;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+    .date {
+      color: var(--muted);
+      font-size: 15px;
+      white-space: nowrap;
+    }
+    .organization {
+      margin: 0 0 15px;
+      color: #353a44;
+      font-weight: 700;
+    }
+    .context { color: var(--soft); }
+    ul.work-list {
+      margin: 13px 0 0;
+      padding-left: 27px;
+      color: #292e38;
+    }
+    ul.work-list li {
+      margin: 0 0 8px;
+      padding-left: 1px;
+    }
+    ul.work-list li:last-child { margin-bottom: 0; }
+    strong { font-weight: 700; }
+
+    .education { margin-bottom: 23px; }
+    .education:last-child { margin-bottom: 0; }
+    .education .institution,
+    .course .institution {
+      color: #373c46;
+      font-weight: 700;
+      margin: 3px 0 10px;
+    }
+    .education .description { color: var(--soft); }
+
+    .course {
+      margin-bottom: 20px;
+    }
+    .course .meta,
+    .education .meta {
+      color: var(--muted);
+      margin: 2px 0 6px;
+    }
+    .course a {
+      color: var(--purple);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--purple);
+    }
+
+    .skills {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--rule);
+    }
+    .skills li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--rule);
+      color: #2d323c;
+    }
+    .skills .label { font-weight: 700; }
+
+    .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 30px;
+      color: #454b57;
+    }
+    .languages strong { color: #3e4450; }
+
+    /* Page boundary: keeps the second page starting at Formação Acadêmica. */
+    .page-break-before {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    @media screen and (min-width: 701px) {
+      .page-break-before {
+        position: relative;
+        margin-top: 72px;
+        padding-top: 42px;
+      }
+      .page-break-before::before {
+        content: '';
+        position: absolute;
+        left: -62px;
+        right: -62px;
+        top: -36px;
+        height: 20px;
+        background: #f3f4f7;
+        border-top: 1px solid #e2e3e8;
+        border-bottom: 1px solid #e2e3e8;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body { background: #fff; }
+      main.resume { width: 100%; margin: 0; padding: 32px 24px 42px; box-shadow: none; }
+      h1 { font-size: 30px; }
+      .headline { font-size: 16px; }
+      .contact-lines .row { display: block; }
+      .contact-lines .row > * { display: block; margin-bottom: 4px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 0; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { background: #fff; font-size: 11pt; line-height: 1.5; }
+      main.resume {
+        width: auto;
+        margin: 0;
+        padding: 12.5mm 16.5mm 13mm;
+        box-shadow: none;
+      }
+      header { margin-bottom: 6mm; }
+      h1 { font-size: 25.5pt; margin-bottom: 2mm; }
+      .headline { font-size: 13pt; margin-bottom: 3mm; }
+      .contact-lines { font-size: 9.7pt; line-height: 1.45; }
+      .contact-lines .row { gap: 2mm 4mm; margin-bottom: 1mm; }
+      .availability { margin-top: 1mm; }
+      .top-rule { height: 1.5pt; margin-top: 5.5mm; }
+      section { margin-bottom: 6.5mm; }
+      .page-break-before {
+        break-before: page;
+        page-break-before: always;
+        margin-top: 0;
+        padding-top: 0;
+      }
+      .page-break-before::before { display: none; }
+      h2 { font-size: 10.5pt; margin-bottom: 4.2mm; letter-spacing: .10em; }
+      h3 { font-size: 12.8pt; }
+      .date { font-size: 9.7pt; }
+      .organization { margin-bottom: 3.8mm; font-size: 10.4pt; }
+      .summary p, .context, .education p, .course p { font-size: 10.4pt; margin-bottom: 2.7mm; }
+      ul.work-list { font-size: 10pt; margin-top: 2.6mm; padding-left: 6mm; }
+      ul.work-list li { margin-bottom: 1.45mm; }
+      .education { margin-bottom: 5.3mm; }
+      .education .institution, .course .institution { font-size: 10.2pt; margin: .8mm 0 2.2mm; }
+      .course .meta, .education .meta { font-size: 9.6pt; }
+      .skills li { font-size: 10pt; padding: 2.1mm 0; }
+      .languages { font-size: 10pt; gap: 4mm 8mm; }
+      a { color: inherit; }
+        }
+  </style>
+</head>
+<body>
+<main class="resume">
+  <header>
+    <h1>Arthur de Andrade de Cerqueira Leite</h1>
+    <p class="headline">Desenvolvedor de Software | Java, Spring Boot, SQL &amp; Inteligência Artificial</p>
+    <div class="contact-lines">
+      <div class="row">
+        <span>Tijuca, Rio de Janeiro - RJ, Brasil</span>
+        <span>+55 21 99903-0653</span>
+        <a href="mailto:arthuracleite@gmail.com">arthuracleite@gmail.com</a>
+      </div>
+      <div class="row">
+        <a href="https://www.linkedin.com/in/arthur-de-andrade-692192352">linkedin.com/in/arthur-de-andrade-692192352</a>
+        <a href="https://github.com/Arthur-de-Andrade">github.com/Arthur-de-Andrade</a>
+      </div>
+      <div class="availability">Disponibilidade: 30 horas semanais, com turnos da manhã e da tarde livres.</div>
+    </div>
+    <div class="top-rule"></div>
+  </header>
+
+  <section class="summary">
+    <h2>Resumo Profissional</h2>
+    <p>Desenvolvedor de Software com experiência prática no desenvolvimento e manutenção de aplicações web corporativas utilizando <strong>Java, Spring Boot, SQL, APIs REST e bancos de dados relacionais</strong>.</p>
+    <p>Atualmente atuo como Desenvolvedor Full Stack na ANTHARYS, contribuindo para o desenvolvimento e evolução de um ERP corporativo voltado a processos de faturamento, contratos, fluxos financeiros, relatórios, automações e integrações fiscais.</p>
+    <p>Possuo experiência com <strong>Inteligência Artificial aplicada ao desenvolvimento de software</strong>, utilizando <strong>ChatGPT, Claude Code e GitHub Copilot</strong>, com análise crítica e responsabilidade técnica sobre o código e as soluções implementadas.</p>
+    <p>Tenho interesse em <strong>engenharia de software, inteligência artificial, dados, automação, sistemas distribuídos e desenvolvimento de soluções tecnológicas para problemas reais em escala</strong>.</p>
+  </section>
+
+  <section>
+    <h2>Experiência Profissional</h2>
+    <article>
+      <div class="entry-head">
+        <h3>Desenvolvedor Full Stack</h3>
+        <span class="date">Março de 2026 - Atual</span>
+      </div>
+      <p class="organization">ANTHARYS - Rio de Janeiro, Brasil</p>
+      <p class="context">Empresa de tecnologia focada em transformação digital, com atuação em software, cloud computing, dados, automação, infraestrutura e segurança da informação no Brasil e no mercado internacional.</p>
+      <p class="context">Atuo no desenvolvimento e evolução do <strong>Faturamento</strong>, um ERP corporativo voltado à gestão de faturamento e automação de processos financeiros e administrativos, abrangendo contratos, relatórios, comunicações automatizadas e integrações fiscais para <strong>NFS-e</strong>.</p>
+      <ul class="work-list">
+        <li>Desenvolvimento e manutenção de serviços de back-end e regras de negócio utilizando <strong>Java 8, Spring Boot, Hibernate e JPA</strong>.</li>
+        <li>Desenvolvimento e manutenção de <strong>APIs REST</strong> e integrações entre diferentes componentes da aplicação.</li>
+        <li>Desenvolvimento e evolução de telas, formulários e fluxos de front-end utilizando <strong>AngularJS, JavaScript, HTML e CSS</strong>.</li>
+        <li>Atuação com <strong>SQL e MySQL</strong>, incluindo desenvolvimento e otimização de consultas, modelagem de dados, investigação de problemas e análise de integridade de dados.</li>
+        <li>Gerenciamento de alterações de estrutura de banco de dados e migrations utilizando <strong>Liquibase</strong>.</li>
+        <li>Desenvolvimento e manutenção de relatórios corporativos e operacionais utilizando <strong>JasperReports</strong>.</li>
+        <li>Investigação e correção de problemas em sistemas atuais e legados, avaliando impactos entre diferentes camadas da aplicação e processos de negócio.</li>
+        <li>Utilização de <strong>Git e Maven</strong> para versionamento de código, gerenciamento de dependências e build da aplicação.</li>
+        <li>Utilização de <strong>ChatGPT, Claude Code e GitHub Copilot</strong> como ferramentas de apoio ao desenvolvimento, análise de código, debugging, refatoração e investigação técnica.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="education page-break-before">
+    <h2>Formação Acadêmica</h2>
+    <div class="education">
+      <div class="edu-head">
+        <h3>Bacharelado em Sistemas de Informação</h3>
+        <span class="date">Conclusão prevista: 2029</span>
+      </div>
+      <p class="institution">CEFET/RJ - Centro Federal de Educação Tecnológica Celso Suckow da Fonseca</p>
+      <p class="description">Graduação com estudos em engenharia de software, algoritmos, estruturas de dados, bancos de dados, sistemas de informação, redes de computadores e desenvolvimento de software.</p>
+    </div>
+    <div class="education">
+      <h3>Programador Full Stack</h3>
+      <p class="institution">SENAC</p>
+      <p class="description">Formação profissional voltada ao desenvolvimento web full stack, incluindo fundamentos de lógica de programação, desenvolvimento front-end, desenvolvimento back-end, bancos de dados e construção de aplicações web.</p>
+      <p class="meta"><strong>Credencial:</strong> RN4CJ-MA8ML-P5DNC-MNBGF &middot; <a href="https://assinador.somosb4.com.br/validate/RN4CJ-MA8ML-P5DNC-MNBGF">Validar certificado</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Formação Complementar</h2>
+    <div class="course">
+      <div class="course-head">
+        <h3>Red Hat System Administration I (RH124 - RHA) - Ver. 9.3</h3>
+        <span class="date">Junho de 2026</span>
+      </div>
+      <p class="institution">Red Hat Academy</p>
+      <p class="meta">40 horas</p>
+      <p>Formação em fundamentos de administração de sistemas Red Hat Enterprise Linux (RHEL).</p>
+      <p><a href="https://www.credly.com/badges/39998735-dc64-44be-85c9-d63b53cb2d8a">Verificar certificado</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Competências Técnicas</h2>
+    <ul class="skills">
+      <li><span class="label">Linguagens:</span> Java, JavaScript, SQL, HTML, CSS</li>
+      <li><span class="label">Back-end:</span> Spring Boot, APIs REST, Hibernate, JPA</li>
+      <li><span class="label">Front-end:</span> AngularJS</li>
+      <li><span class="label">Bancos de Dados:</span> MySQL, SQL, Bancos de Dados Relacionais, Modelagem de Dados</li>
+      <li><span class="label">Ferramentas:</span> Git, Maven, Liquibase, JasperReports</li>
+      <li><span class="label">Sistemas Operacionais:</span> Linux, Red Hat Enterprise Linux (RHEL), Windows, iOS</li>
+      <li><span class="label">Inteligência Artificial:</span> ChatGPT, Claude Code, GitHub Copilot</li>
+      <li><span class="label">Engenharia de Software:</span> Programação Orientada a Objetos, Desenvolvimento de APIs, Debugging, Sistemas Legados, Integração de Sistemas, Análise de Requisitos</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Idiomas</h2>
+    <div class="languages">
+      <span><strong>Português:</strong> Nativo</span>
+      <span><strong>Inglês:</strong> Avançado</span>
+      <span><strong>Espanhol:</strong> Básico</span>
+    </div>
+  </section>
+</main>
+</body>
+</html>
