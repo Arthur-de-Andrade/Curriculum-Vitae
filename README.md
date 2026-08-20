@@ -49,3 +49,5 @@ O build usa `output: "export"` e gera o diretório `out/`, com HTML e assets est
 ## GitHub Pages
 
 O workflow em `.github/workflows/deploy.yml` instala as dependências com `npm ci`, executa lint, typecheck e build, envia `out/` como artifact e faz deploy com as Actions oficiais do GitHub Pages. No workflow, `NEXT_PUBLIC_BASE_PATH=/Curriculum-Vitae` configura o subpath do GitHub Project Pages; localmente essa variável não é definida.
+
+nvm use 24.14.1 -> npm run dev

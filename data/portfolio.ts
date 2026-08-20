@@ -10,6 +10,7 @@ import type {
 
 export const navigationItems: NavigationItem[] = [
   { label: "Sobre", href: "#sobre" },
+  { label: "Projetos", href: "#projects" },
   { label: "Experiência", href: "#experiencia" },
   { label: "Formação", href: "#formacao" },
   { label: "Certificações", href: "#cursos" },
@@ -44,8 +45,10 @@ export const portfolioInfoItems: PortfolioInfoItem[] = [
 
 export const educationItems: EducationItem[] = [
   {
+    id: "bacharelado-sistemas-informacao",
     icon: "fas fa-graduation-cap",
     label: "Graduação em andamento",
+    journeyType: "education",
     title: "Bacharelado em Sistemas de Informação",
     institution: "CEFET/RJ - Centro Federal de Educação Tecnológica Celso Suckow da Fonseca",
     period: "Conclusão prevista: 2029",
@@ -53,8 +56,10 @@ export const educationItems: EducationItem[] = [
       "Estudos em engenharia de software, algoritmos, estruturas de dados, bancos de dados, sistemas de informação, redes de computadores e desenvolvimento de software.",
   },
   {
+    id: "programador-full-stack-senac",
     icon: "fas fa-laptop-code",
     label: "Formação profissional",
+    journeyType: "course",
     title: "Programador Full Stack",
     institution: "SENAC",
     period: "360 horas · 26/03/2025 a 11/09/2025",

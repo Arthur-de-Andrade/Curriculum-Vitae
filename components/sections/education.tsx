@@ -1,15 +1,16 @@
 import { educationItems } from "@/data/portfolio";
+import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Surface } from "@/components/ui/surface";
 
 export function Education() {
   return (
-    <section id="formacao" className="section">
-      <div className="container">
+    <Section id="formacao">
         <SectionHeading kicker="Aprendizado" title="Formação" />
 
         <div className="education-grid">
           {educationItems.map((item) => (
-            <article className="education-card" key={item.title}>
+            <Surface as="article" className="education-card" key={item.title}>
               <div className="card-icon">
                 <i className={item.icon} aria-hidden="true" />
               </div>
@@ -20,10 +21,9 @@ export function Education() {
                 <span className="card-period">{item.period}</span>
                 <p>{item.description}</p>
               </div>
-            </article>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

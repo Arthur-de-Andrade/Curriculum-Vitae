@@ -25,6 +25,17 @@ interface SkillModalProviderProps {
 export function SkillModalProvider({ children }: SkillModalProviderProps) {
   const [selectedSkill, setSelectedSkill] = useState<SkillItem | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const lastTriggerRef = useRef<HTMLElement | null>(null);
+
+  const closeModal = () => setSelectedSkill(null);
+
+  const openSkill = (skill: SkillItem) => {
+    if (document.activeElement instanceof HTMLElement) {
+      lastTriggerRef.current = document.activeElement;
+    }
+
+    setSelectedSkill(skill);
+  };
 
   useEffect(() => {
     if (!selectedSkill) return;
@@ -33,23 +44,26 @@ export function SkillModalProvider({ children }: SkillModalProviderProps) {
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setSelectedSkill(null);
+        closeModal();
       }
     };
 
     document.addEventListener("keydown", handleEscape);
 
-    return () => document.removeEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      lastTriggerRef.current?.focus();
+    };
   }, [selectedSkill]);
 
   const handleBackdropClick = (event: MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
-      setSelectedSkill(null);
+      closeModal();
     }
   };
 
   return (
-    <SkillModalContext.Provider value={{ openSkill: setSelectedSkill }}>
+    <SkillModalContext.Provider value={{ openSkill }}>
       {children}
       <div
         id="skillModal"
@@ -67,7 +81,7 @@ export function SkillModalProvider({ children }: SkillModalProviderProps) {
             type="button"
             aria-label="Fechar descrição"
             ref={closeButtonRef}
-            onClick={() => setSelectedSkill(null)}
+            onClick={closeModal}
           >
             &times;
           </button>
@@ -93,6 +107,8 @@ export function SkillButton({ skill }: { skill: SkillItem }) {
       className="skill-tag"
       type="button"
       data-description={skill.description}
+      aria-haspopup="dialog"
+      aria-controls="skillModal"
       onClick={() => context.openSkill(skill)}
     >
       {skill.name}

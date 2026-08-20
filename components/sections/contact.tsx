@@ -1,10 +1,10 @@
 import { contactItems } from "@/data/portfolio";
+import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 export function Contact() {
   return (
-    <section id="contato" className="section contact-section">
-      <div className="container">
+    <Section id="contato" className="contact-section">
         <SectionHeading
           kicker="Vamos conversar"
           title="Contato"
@@ -16,7 +16,7 @@ export function Contact() {
             <a
               key={item.title}
               href={item.href}
-              className={`contato-card${item.title === "E-mail" ? " contato-card-button" : ""}`}
+              className={`contato-card surface surface-interactive${item.title === "E-mail" ? " contato-card-button" : ""}`}
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
             >
@@ -27,7 +27,6 @@ export function Contact() {
             </a>
           ))}
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

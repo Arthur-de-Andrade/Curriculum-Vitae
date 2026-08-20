@@ -1,3 +1,121 @@
-/* Tailwind utilities are available for future phases without enabling its preflight reset. */
+/* Tailwind v4 theme + utilities are enabled without importing Preflight. */
 @import "tailwindcss/theme.css";
 @import "tailwindcss/utilities.css";
+
+:root {
+  --ds-background: #08090b;
+  --ds-foreground: #f5f7fa;
+  --ds-surface: #0f1115;
+  --ds-surface-hover: #141820;
+  --ds-elevated: #191d25;
+  --ds-muted: #737b88;
+  --ds-muted-foreground: #a3aab6;
+  --ds-border: rgba(255, 255, 255, 0.1);
+  --ds-border-subtle: rgba(255, 255, 255, 0.07);
+  --ds-border-strong: rgba(255, 255, 255, 0.17);
+  --ds-primary: #7ea7ff;
+  --ds-primary-hover: #a4c0ff;
+  --ds-primary-foreground: #07101e;
+  --ds-accent: #b49aff;
+  --ds-accent-foreground: #160e2c;
+  --ds-success: #5ed5a0;
+  --ds-destructive: #ff7184;
+  --ds-focus-ring: rgba(126, 167, 255, 0.46);
+
+  --ds-radius-small: 0.375rem;
+  --ds-radius-medium: 0.625rem;
+  --ds-radius-large: 0.875rem;
+  --ds-radius-pill: 999px;
+
+  --ds-space-1: 0.25rem;
+  --ds-space-2: 0.5rem;
+  --ds-space-3: 0.75rem;
+  --ds-space-4: 1rem;
+  --ds-space-5: 1.25rem;
+  --ds-space-6: 1.5rem;
+  --ds-space-8: 2rem;
+  --ds-space-10: 2.5rem;
+  --ds-space-12: 3rem;
+  --ds-space-16: 4rem;
+  --ds-space-20: 5rem;
+  --ds-space-24: 6rem;
+
+  --ds-shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.16);
+  --ds-shadow-focus: 0 0 0 3px var(--ds-focus-ring);
+
+  --ds-text-display: clamp(3rem, 8vw, 7.5rem);
+  --ds-text-h1: clamp(2.5rem, 6vw, 4.5rem);
+  --ds-text-h2: clamp(2rem, 4vw, 3rem);
+  --ds-text-h3: clamp(1.2rem, 2vw, 1.5rem);
+  --ds-text-body: 1rem;
+  --ds-text-small: 0.875rem;
+  --ds-text-label: 0.75rem;
+  --ds-text-mono: 0.8125rem;
+
+  --ds-duration-fast: 160ms;
+  --ds-duration-normal: 240ms;
+  --ds-duration-slow: 360ms;
+  --ds-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ds-font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --ds-font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@theme inline {
+  --color-background: var(--ds-background);
+  --color-foreground: var(--ds-foreground);
+  --color-surface: var(--ds-surface);
+  --color-surface-hover: var(--ds-surface-hover);
+  --color-elevated: var(--ds-elevated);
+  --color-muted: var(--ds-muted);
+  --color-muted-foreground: var(--ds-muted-foreground);
+  --color-border: var(--ds-border);
+  --color-primary: var(--ds-primary);
+  --color-accent: var(--ds-accent);
+  --color-success: var(--ds-success);
+  --color-destructive: var(--ds-destructive);
+  --font-sans: var(--ds-font-sans);
+  --font-mono: var(--ds-font-mono);
+  --radius-sm: var(--ds-radius-small);
+  --radius-md: var(--ds-radius-medium);
+  --radius-lg: var(--ds-radius-large);
+  --radius-pill: var(--ds-radius-pill);
+  --spacing-1: var(--ds-space-1);
+  --spacing-2: var(--ds-space-2);
+  --spacing-3: var(--ds-space-3);
+  --spacing-4: var(--ds-space-4);
+  --spacing-5: var(--ds-space-5);
+  --spacing-6: var(--ds-space-6);
+  --spacing-8: var(--ds-space-8);
+  --spacing-10: var(--ds-space-10);
+  --spacing-12: var(--ds-space-12);
+  --spacing-16: var(--ds-space-16);
+  --spacing-20: var(--ds-space-20);
+  --spacing-24: var(--ds-space-24);
+  --ease-standard: var(--ds-ease-standard);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.portfolio-site ::selection {
+  background: rgba(126, 167, 255, 0.28);
+  color: var(--ds-foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

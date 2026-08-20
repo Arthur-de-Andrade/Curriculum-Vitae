@@ -1,10 +1,11 @@
 import { portfolioInfoItems } from "@/data/portfolio";
+import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Surface } from "@/components/ui/surface";
 
 export function About() {
   return (
-    <section id="sobre" className="section">
-      <div className="container">
+    <Section id="sobre">
         <SectionHeading kicker="Perfil" title="Sobre mim" />
 
         <div className="about-layout">
@@ -32,17 +33,16 @@ export function About() {
 
           <div className="info-grid">
             {portfolioInfoItems.map((item) => (
-              <div className="info-item" key={item.label}>
+              <Surface className="info-item" key={item.label} interactive>
                 <i className={item.icon} aria-hidden="true" />
                 <div>
                   <span className="info-label">{item.label}</span>
                   <strong>{item.value}</strong>
                 </div>
-              </div>
+              </Surface>
             ))}
           </div>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

@@ -9,13 +9,39 @@ export interface PortfolioInfoItem {
   value: string;
 }
 
+export type JourneyItemType = "experience" | "education" | "course";
+export type JourneyItemStatus = "current" | "ongoing" | "completed";
+
 export interface EducationItem {
+  id: string;
   icon: string;
   label: string;
+  journeyType: "education" | "course";
   title: string;
   institution: string;
   period: string;
   description: string;
+}
+
+export interface JourneyItem {
+  id: string;
+  type: JourneyItemType;
+  title: string;
+  organization: string;
+  location?: string;
+  start?: string;
+  end?: string;
+  periodLabel: string;
+  description: string[];
+  highlights?: string[];
+  technologies?: string[];
+  status?: JourneyItemStatus;
+  icon: string;
+  anchorId?: string;
+  credential?: {
+    label: string;
+    href: string;
+  };
 }
 
 export interface CertificationMetaItem {
@@ -59,4 +85,45 @@ export interface ContactItem {
   actionLabel: string;
   href: string;
   external?: boolean;
+}
+
+export type ProjectKind = "professional" | "academic" | "personal";
+
+export interface ProjectPreviewData {
+  type: "abstract" | "image";
+  src?: string;
+  alt: string;
+}
+
+export interface ProjectMedia {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+export interface ProjectCaseSection {
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
+  media?: ProjectMedia[];
+}
+
+export interface ProjectCaseStudy {
+  intro: string;
+  sections: ProjectCaseSection[];
+  privateSourceNote?: string;
+}
+
+export interface Project {
+  slug: string;
+  index: string;
+  title: string;
+  eyebrow: string;
+  kind: ProjectKind;
+  summary: string;
+  technologies: string[];
+  githubUrl?: string;
+  privateSource?: boolean;
+  preview: ProjectPreviewData;
+  caseStudy: ProjectCaseStudy;
 }

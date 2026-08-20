@@ -1,17 +1,19 @@
+import { Badge } from "@/components/ui/badge";
+import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Surface } from "@/components/ui/surface";
 
 export function Experience() {
   return (
-    <section id="experiencia" className="section section-muted">
-      <div className="container">
+    <Section id="experiencia" className="section-muted">
         <SectionHeading kicker="Trajetória" title="Experiência profissional" />
 
-        <article className="experience-card">
+        <Surface as="article" className="experience-card">
           <div className="experience-topline">
             <div>
-              <span className="status-badge">
+              <Badge tone="success" className="status-badge">
                 <i className="fas fa-briefcase" aria-hidden="true" /> Atual
-              </span>
+              </Badge>
               <h3>Desenvolvedor Full Stack</h3>
               <p className="company">
                 ANTHARYS <span>·</span> Rio de Janeiro, Brasil
@@ -70,15 +72,14 @@ export function Experience() {
           </ul>
 
           <div className="tech-stack" aria-label="Tecnologias utilizadas na experiência">
-            <span>Java 8</span>
-            <span>Spring Boot</span>
-            <span>AngularJS</span>
-            <span>MySQL</span>
-            <span>Liquibase</span>
-            <span>JasperReports</span>
+            <Badge>Java 8</Badge>
+            <Badge>Spring Boot</Badge>
+            <Badge>AngularJS</Badge>
+            <Badge>MySQL</Badge>
+            <Badge>Liquibase</Badge>
+            <Badge>JasperReports</Badge>
           </div>
-        </article>
-      </div>
-    </section>
+        </Surface>
+    </Section>
   );
 }

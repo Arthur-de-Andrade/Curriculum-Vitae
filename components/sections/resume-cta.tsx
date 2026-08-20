@@ -1,9 +1,10 @@
 import Link from "next/link";
 
+import { Section } from "@/components/ui/section";
+
 export function ResumeCta() {
   return (
-    <section id="curriculo" className="section resume-cta">
-      <div className="container">
+    <Section id="curriculo" className="resume-cta">
         <div className="resume-cta-content">
           <span className="section-kicker">Documento completo</span>
           <h2 className="section-title">Quer conhecer minha trajetória em detalhes?</h2>
@@ -15,7 +16,6 @@ export function ResumeCta() {
             Abrir currículo completo <i className="fas fa-arrow-up-right-from-square" aria-hidden="true" />
           </Link>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }
